@@ -4,11 +4,11 @@ clean:
 	rm -rf src/modules/__pycache__
  
 docker-build:
-	docker build --rm=true -t 003779439673.dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest .
+	docker build --rm=true -t [AWS_ACCOUNT_ID].dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest .
  
 docker-run:
-	docker run --rm -it 003779439673.dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest
+	docker run --rm -it [AWS_ACCOUNT_ID].dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest
 
 docker-push: clean
-	$$(aws ecr get-login --no-include-email --region ap-northeast-2 --profile yunsoo246@naver.com)
-	docker push 003779439673.dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest
+	$$(aws ecr get-login --no-include-email --region ap-northeast-2)
+	docker push [AWS_ACCOUNT_ID].dkr.ecr.ap-northeast-2.amazonaws.com/openlawdata-datapipeline-lawcontentsearch:latest

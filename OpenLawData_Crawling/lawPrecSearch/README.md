@@ -43,6 +43,11 @@ lawPrecSearch
             - devNum: 투입인력(명)
             - purpose: 국가법령정보 활용 목적, 적용 분야 또는 사업 모델
 
+## Bash shell (./Makefile)
+
+* 참고사항
+    - `AWS_ACCOUNT_ID`: AWS 사용자 계정 ID (숫자) 
+
 ## Local Development Env Setup & Deployment
 
 ``` bash
