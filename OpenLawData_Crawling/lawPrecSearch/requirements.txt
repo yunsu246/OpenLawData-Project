@@ -1,0 +1,4 @@
+boto3==1.9.36
+requests==2.20.0
+beautifulsoup4==4.6.3
+xmltodict==0.11.0

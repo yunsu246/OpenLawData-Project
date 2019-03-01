@@ -1,0 +1,36 @@
+{
+    "dev": {
+        "events": [
+            {
+                "function": "src.lambda_function",
+                "event_source": {
+                    "arn":  "arn:aws:s3:::openlawdata-raw-003779439673",
+                    "events": [
+                        "s3:ObjectCreated:*"
+                    ],
+                    "key_filters": [
+                        {
+                          "type": "prefix",
+                          "value": "lawNm/"
+                        },
+                        {
+                          "type": "sufix",
+                          "value": ".json"
+                        }
+                    ]
+                }
+            }
+        ],
+        "aws_region": "ap-northeast-2",
+        "profile_name": "default",
+        "project_name": "openlawdata-crawling-lawNmTransfer",
+        "runtime": "python3.6",
+        "s3_bucket": "openlawdata-crawling",
+        "apigateway_enabled": false,
+        "keep_warm": false,
+        "lambda_description": "Serverless Crawler for transferring 'LawNm' json file info to openlawdata-crawling-lawContentSearch, AWS ECS(Fargate)",
+        "lambda_handler": "src.lambda_function.lambda_handler",
+        "memory_size": 256,
+        "timeout_seconds": 20
+    }
+}
